@@ -11,7 +11,8 @@ const App: React.FC = () => {
 
     
  return (
-   <>
+  <>
+    <h1 className="center"> Pokédex </h1>
       <Pokemonlist />
   </>
  )
