@@ -1,5 +1,5 @@
-import React, {useState }from 'react';
-import Pokemonlist from './Pokemon-list';
+import React from 'react';
+import Pokemonlist from './Screen/Pokemon-list';
 // option possible  : import React,{ FunctionComponent } from 'react'; et modifier 'React.FC l5 par FunctionComponent
 
 
@@ -7,7 +7,7 @@ import Pokemonlist from './Pokemon-list';
 const App: React.FC = () => {
 //  const name: String = 'React';
 //  version hook => 
-    const [name, setName] = useState<String>('React');
+    // const [name, setName] = useState<String>('React');
 
     
  return (
