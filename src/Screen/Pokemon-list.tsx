@@ -4,7 +4,7 @@ import Pokemon from '../models/pokemon'
 import PokemonCard from '../Components/pokemon-card'
 
 const Pokemonlist: FunctionComponent = () => {
-  //  initialiser un state contenant un tableau de vide pouvant recueillir des pokémons grâce au typage des données
+  //  initialiser un state contenant un tableau vide pouvant recueillir des pokémons grâce au typage des données
   const [Pokemons, setPokemons] = useState<Pokemon[]>([])
   const [Nbofpokemons] = useState<Number>(Pokémons.length)
 
