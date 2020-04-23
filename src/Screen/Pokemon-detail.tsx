@@ -1,9 +1,10 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import { RouteComponentProps, Link } from 'react-router-dom';
 import Pokemon from '../models/pokemon';
-import POKEMONS from '../models/mock-pokemons';
+// import POKEMONS from '../models/mock-pokemons';
 import formatDate from '../Helpers/format-date';
 import formatType from '../Helpers/format-type';
+import PokemonService from '../services/pokemon-service'
 
 
 type Params = { id: string };
@@ -12,13 +13,27 @@ const PokemonsDetail: FunctionComponent<RouteComponentProps<Params>> = ({ match 
     
   const [pokemon, setPokemon] = useState<Pokemon|null>(null);
   
+  // Hook initial avant l'utilisation de json-server pour simuler l'API REST
+  // useEffect(() => {
+  //   POKEMONS.forEach(pokemon => {
+  //     if (match.params.id === pokemon.id.toString()) {
+  //       setPokemon(pokemon);
+  //     }
+  //   })
+  // }, [match.params.id]);
+
+  // Hook avant l'utilisation du service Get
+  // useEffect(() => {
+  //   fetch(`http://localhost:3001/pokemons/${match.params.id}`)
+  //   .then(response => response.json())
+  //   .then((pokemon) => {
+  //     if (pokemon.id) setPokemon(pokemon)
+  //   });
+  // },[match.params.id] )
+
   useEffect(() => {
-    POKEMONS.forEach(pokemon => {
-      if (match.params.id === pokemon.id.toString()) {
-        setPokemon(pokemon);
-      }
-    })
-  }, [match.params.id]);
+    PokemonService.getPokemon(+match.params.id).then(pokemon => setPokemon(pokemon))
+  },[match.params.id] )
     
   return (
     <div>

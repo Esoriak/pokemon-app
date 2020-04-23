@@ -71,21 +71,21 @@ const PokemonForm: FunctionComponent<Props> = ({pokemon}) => {
   const validateForm = () => {
     let newForm: Form = form;
 
-    // Validator url
-    if(isAddForm()) {
+    // // Validator url
+    // if(isAddForm()) {
 
-      const start = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
-      const end = ".png";
+    //   const start = "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
+    //   const end = ".png";
 
-      if(!form.picture.value.startsWith(start) || !form.picture.value.endsWith(end)) {
-        const errorMsg: string = 'L\'url n\'est pas valide.';
-        const newField: Field = { value: form.picture.value, error: errorMsg, isValid: false };
-        newForm = { ...newForm, ...{ picture: newField } };
-      } else {
-        const newField: Field = { value: form.picture.value, error: '', isValid: true };
-        newForm = { ...newForm, ...{ picture: newField } };
-      }
-    }
+    //   if(!form.picture.value.startsWith(start) || !form.picture.value.endsWith(end)) {
+    //     const errorMsg: string = 'L\'url n\'est pas valide.';
+    //     const newField: Field = { value: form.picture.value, error: errorMsg, isValid: false };
+    //     newForm = { ...newForm, ...{ picture: newField } };
+    //   } else {
+    //     const newField: Field = { value: form.picture.value, error: '', isValid: true };
+    //     newForm = { ...newForm, ...{ picture: newField } };
+    //   }
+    // }
 
     // Validator name
     if(!/^[a-zA-Zàéè ]{3,25}$/.test(form.name.value)) {
